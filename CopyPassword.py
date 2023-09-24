@@ -7,6 +7,7 @@ PASSWORDS={
     'blog':'myblogpassword',
     'social':'mysocialpassword'
 }
+
 if len(sys.argv)<2:
   print('Usage:python password_manager.py[account]-copy accountpassword')
   sys.exit()
