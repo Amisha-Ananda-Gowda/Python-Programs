@@ -23,6 +23,7 @@ def checkwin(player):
     if  board[2]==board[4]==board[6]==player:
         return True
     return False
+
 def playgame():
     print("Welcome")
     printboard()
@@ -45,7 +46,7 @@ def playgame():
         else:
             player="X"
 
-            
+
         printboard()
         
 playgame()
