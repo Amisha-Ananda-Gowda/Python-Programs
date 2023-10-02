@@ -11,7 +11,7 @@ def printboard():
     print("-------------------")
     print("|",board[6],"|",board[7],"|",board[8],"|")
     print("-------------------")
-    
+
 def checkwin(player):
     for i in range(0,9,3):
         if board[i]==board[i+1]==board[i+2]==player:
@@ -29,6 +29,7 @@ def playgame():
     print("Welcome")
     printboard()
     player="X"
+    
     while True:
         move= int(input("Player"+player+"enter your move"))-1
         if board[move]==" ":
