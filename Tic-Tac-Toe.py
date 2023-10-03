@@ -29,8 +29,9 @@ def playgame():
     print("Welcome")
     printboard()
     player="X"
-    
+
     while True:
+        
         move= int(input("Player"+player+"enter your move"))-1
         if board[move]==" ":
             board[move]=player
