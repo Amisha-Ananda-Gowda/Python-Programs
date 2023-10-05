@@ -5,6 +5,7 @@ for i in range(n):
     num.append(int(input()))
 sum=0
 product=1
+
 for i in range(n):
     if(num[i]%2==0):
         sum+=num[i]
