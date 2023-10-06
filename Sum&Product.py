@@ -1,6 +1,7 @@
 n=int(input("Enter the number of elements:"))
 num=[]
 print("Enter ",n," Elements:")
+
 for i in range(n):
     num.append(int(input()))
 sum=0
