@@ -4,6 +4,7 @@ print("Enter ",n," Elements:")
 
 for i in range(n):
     num.append(int(input()))
+    
 sum=0
 product=1
 
