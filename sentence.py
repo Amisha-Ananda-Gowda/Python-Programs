@@ -11,6 +11,7 @@ for i in sentence:
         upper+=1
     elif i.islower():
         lower+=1
+        
 print("Number of words : ",words)
 print("Number of digits : ",digit)
 print("Number of uppercase letters : ",upper)
