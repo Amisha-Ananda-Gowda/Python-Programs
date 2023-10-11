@@ -7,4 +7,5 @@ for i in range(0,6):
         num[i]="ppp"
     elif num[i]%5==0:
         num[i]="qqq"
+        
 print(num)
