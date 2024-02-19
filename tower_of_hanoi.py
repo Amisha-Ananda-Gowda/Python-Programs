@@ -1,13 +1,14 @@
-def tower_of_hanoi(n, source, target, auxiliary):
-    if n == 1:
-        print("Move disk 1 from {} to {}".format(source, target))
-        return
-    tower_of_hanoi(n-1, source, auxiliary, target)
-    print("Move disk {} from {} to {}".format(n, source, target))
-    tower_of_hanoi(n-1, auxiliary, target, source)
+def TowerOfHanoi(n, from_rod, to_rod, aux_rod): 
+    if n == 0: 
+        return TowerOfHanoi(n-1, from_rod, aux_rod, to_rod) 
+        print("Move disk", n, "from rod", from_rod, "to rod", to_rod) 
+        TowerOfHanoi(n-1, aux_rod, to_rod, from_rod) 
+        n = int(input("Enter the number of disks:"))
+        TowerOfHanoi(n, 'A', 'C', 'B') 
+
 
 # Get user input for number of disks
 num_disks = int(input("Enter the number of disks: "))
 
 # Run Tower of Hanoi solver
-tower_of_hanoi(num_disks, 'A', 'C', 'B')
+TowerOfHanoi(num_disks, 'A', 'C', 'B')
