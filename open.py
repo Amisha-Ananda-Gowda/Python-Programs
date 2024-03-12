@@ -1,24 +1,33 @@
 from collections import defaultdict
 
-jug1, jug2, aim = 5, 4, 2
 visited = defaultdict(lambda: False)
 
-def waterJugSolver(amt1, amt2):
+def waterJugSolver(jug1, jug2, aim, amt1=0, amt2=0):
     if (amt1 == aim and amt2 == 0) or (amt2 == aim and amt1 == 0):
-        print(amt1, amt2)
+        print("Steps to achieve", aim, "liters:")
+        print(amt1,"\t",amt2)
         return True
     
     if visited[(amt1, amt2)] == False:
-        print(amt1, amt2)
+        print(amt1,"\t",amt2) 
         visited[(amt1, amt2)] = True
-        return (waterJugSolver(0, amt2) or
-                waterJugSolver(amt1, 0) or
-                waterJugSolver(jug1, amt2) or
-                waterJugSolver(amt1, jug2) or
-                waterJugSolver(amt1 + min(amt2, (jug1 - amt1)), amt2 - min(amt2, (jug1 - amt1))) or
-                waterJugSolver(amt1 - min(amt1, (jug2 - amt2)), amt2 + min(amt1, (jug2 - amt2))))
+        return (waterJugSolver(jug1, jug2, aim, 0, amt2) or
+                waterJugSolver(jug1, jug2, aim, amt1, 0) or
+                waterJugSolver(jug1, jug2, aim, jug1, amt2) or
+                waterJugSolver(jug1, jug2, aim, amt1, jug2) or
+                waterJugSolver(jug1, jug2, aim, amt1 + min(amt2, (jug1 - amt1)), amt2 - min(amt2, (jug1 - amt1))) or
+                waterJugSolver(jug1, jug2, aim, amt1 - min(amt1, (jug2 - amt2)), amt2 + min(amt1, (jug2 - amt2))))
     else:
         return False
 
-print("Steps: ")
-waterJugSolver(0, 0)
+def main():
+    jug1 = int(input("Enter capacity of jug 1: "))
+    jug2 = int(input("Enter capacity of jug 2: "))
+    aim = int(input("Enter desired amount of water: "))
+    
+    print("Steps: ")
+    print("Jug1\tJug2")
+    waterJugSolver(jug1, jug2, aim)
+
+if __name__ == "__main__":
+    main()
