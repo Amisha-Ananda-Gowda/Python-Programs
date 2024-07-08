@@ -24,7 +24,7 @@
 
 
 # EvenOrOdd
-Program to find if the 
+Program to find if the given 
 
 # Factorial
 
